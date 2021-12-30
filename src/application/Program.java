@@ -30,6 +30,8 @@ public class Program {
 
 				boolean[][] possibleMovies = chessMatch.possibleMoves(source);
 				UI.clearScreen();
+				System.out.println("[R = Rook] [K = King]");
+				System.out.println();
 				UI.grintBoard(chessMatch.getPieces(), possibleMovies);
 
 				System.out.println();
