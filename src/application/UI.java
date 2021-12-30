@@ -57,15 +57,21 @@ public class UI {
 		printCapturedPieces(captured);
 		System.out.println();
 		System.out.println("Turn: " + chessMatch.getTurn());
-		System.out.println("Waiting player: " + chessMatch.getCurrentPlayer());
-		if (chessMatch.getCheck()) {
-			System.out.println("You are in check!");
+		if (!chessMatch.getCheckMate()) {
+			System.out.println("Waiting player: " + chessMatch.getCurrentPlayer());
+			if (chessMatch.getCheck()) {
+				System.out.println("You are in check!");
+			}
+		}else {
+			System.out.println("CHECKMATE");
+			System.out.println("Winner: " + chessMatch.getCurrentPlayer());
 		}
+
 	}
 
 	public static void printBoard(ChessPiece[][] pieces) {
 		for (int i = 0; i < pieces.length; i++) {
-			System.out.print(ANSI_RED +(8 - i) + " " + ANSI_RESET);
+			System.out.print(ANSI_RED + (8 - i) + " " + ANSI_RESET);
 			for (int j = 0; j < pieces.length; j++) {
 				printPiece(pieces[i][j], false);
 			}
@@ -76,7 +82,7 @@ public class UI {
 
 	public static void grintBoard(ChessPiece[][] pieces, boolean[][] possibleMovies) {
 		for (int i = 0; i < pieces.length; i++) {
-			System.out.print(ANSI_RED +(8 - i) + " " + ANSI_RESET);
+			System.out.print(ANSI_RED + (8 - i) + " " + ANSI_RESET);
 			for (int j = 0; j < pieces.length; j++) {
 				printPiece(pieces[i][j], possibleMovies[i][j]);
 			}
