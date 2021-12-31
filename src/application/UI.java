@@ -70,23 +70,25 @@ public class UI {
 	}
 
 	public static void printBoard(ChessPiece[][] pieces) {
+		System.out.println(ANSI_RED + "  a b c d e f g h" + ANSI_RESET);
 		for (int i = 0; i < pieces.length; i++) {
 			System.out.print(ANSI_RED + (8 - i) + " " + ANSI_RESET);
 			for (int j = 0; j < pieces.length; j++) {
 				printPiece(pieces[i][j], false);
 			}
-			System.out.println();
+			System.out.println(ANSI_RED + (8 - i) + ANSI_RESET);
 		}
 		System.out.println(ANSI_RED + "  a b c d e f g h" + ANSI_RESET);
 	}
 
 	public static void grintBoard(ChessPiece[][] pieces, boolean[][] possibleMovies) {
+		System.out.println(ANSI_RED + "  a b c d e f g h" + ANSI_RESET);
 		for (int i = 0; i < pieces.length; i++) {
 			System.out.print(ANSI_RED + (8 - i) + " " + ANSI_RESET);
 			for (int j = 0; j < pieces.length; j++) {
 				printPiece(pieces[i][j], possibleMovies[i][j]);
 			}
-			System.out.println();
+			System.out.println(ANSI_RED + (8 - i) + ANSI_RESET);
 		}
 		System.out.println(ANSI_RED + "  a b c d e f g h" + ANSI_RESET);
 	}
