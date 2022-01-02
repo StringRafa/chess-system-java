@@ -21,8 +21,8 @@ public class Program {
 		while (!chessMatch.getCheckMate()) {
 			try {
 				UI.clearScreen();
-				System.out.println("[R = Rook] [K = King] [P = Pawn] [B = Bishop] [N = Knight]");
-				System.out.println();
+				System.out.println("[R = Rook]   [K = King]    [P = Pawn]");
+				System.out.println("[B = Bishop] [N = Knight]  [Q = Queen]");
 				UI.printMatch(chessMatch, captured);
 				System.out.println();
 				System.out.print("Source: ");
@@ -30,8 +30,8 @@ public class Program {
 
 				boolean[][] possibleMovies = chessMatch.possibleMoves(source);
 				UI.clearScreen();
-				System.out.println("[R = Rook] [K = King] [P = Pawn] [B = Bishop] [N = Knight]");
-				System.out.println();
+				System.out.println("[R = Rook]   [K = King]    [P = Pawn]");
+				System.out.println("[B = Bishop] [N = Knight]  [Q = Queen]");
 				UI.grintBoard(chessMatch.getPieces(), possibleMovies);
 
 				System.out.println();
