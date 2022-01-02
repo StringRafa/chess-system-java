@@ -11,6 +11,7 @@ public class Queen extends ChessPiece {
 		super(board, color);
 	}
 
+	@Override
 	public String toString() {
 		return "Q";
 	}
